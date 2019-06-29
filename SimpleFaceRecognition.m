@@ -2,9 +2,13 @@
 n = 3;
 % looping through all subjects and cropping faces if found
 % extract the subject photo and crop faces and saving it in to respective
-% folders 
+% folders
+% numofs01,numofs02,numofs03,....,etc is the number of the images of subject 1, subject 2, subject 3,...,etc.
+numofs01 = 1000;
+numofs02 = 990;
+numofs03 = 980;
 ds1 = imageDatastore('...\s01\img*.jpg');
-for i = 1:size(ds1)
+for i = 1:numofs01
     i1 = readimage(ds1,i);
     [img,face] = cropface(i1);
     if face==1
@@ -12,7 +16,7 @@ for i = 1:size(ds1)
     end
 end
 ds2 = imageDatastore('...\s02\img*.jpg');
-for i = 1:size(ds2)
+for i = 1:numofs02
     i1 = readimage(ds2,i);
     [img,face] = cropface(i1);
     if face==1
@@ -20,7 +24,7 @@ for i = 1:size(ds2)
     end
 end
 ds3 = imageDatastore('...\s03\img*.jpg');
-for i = 1:size(ds3)
+for i = 1:numofs03
     i1 = readimage(ds3,i);
     [img,face] = cropface(i1);
     if face==1
