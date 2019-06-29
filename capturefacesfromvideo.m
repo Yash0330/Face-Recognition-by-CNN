@@ -79,7 +79,7 @@ while runLoop && frameCount < 1000
             % Convert the box corners into the [x1 y1 x2 y2 x3 y3 x4 y4]
             % format required by insertShape.
             bboxPolygon = reshape(bboxPoints', 1, []);
-            imwrite(videoFrame,[ 'C:\Users\yash\Documents\SimpleFaceRecognition',int2str(i), '.jpg']);
+            imwrite(videoFrame,[ '...\SimpleFaceRecognition\s01\',int2str(i), '.jpg']);
             % Display a bounding box around the face being tracked.
             videoFrame = insertShape(videoFrame, 'Polygon', bboxPolygon, 'LineWidth', 3);
 
