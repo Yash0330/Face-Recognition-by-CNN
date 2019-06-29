@@ -35,7 +35,7 @@ end
  names = im.Labels;
  % Resize the images to the input size of the net
  im.ReadFcn = @(loc)imresize(imread(loc),[227,227]);
- [Train ,Test] = splitEachLabel(im,0.8);
+ [Train ,Test] = splitEachLabel(im,0.8,'randomized');
  fc = fullyConnectedLayer(n);
  net = alexnet;
  ly = net.Layers;
@@ -47,6 +47,9 @@ end
  learning_rate = 0.0001;
  opts = trainingOptions("sgdm","InitialLearnRate",learning_rate,'Plots','training-progress');
  [newnet,info] = trainNetwork(Train, ly, opts);
+ % To test a new image first save it and cropface using cropface.m([img,face] = cropface(img); and if it returned 1 for face then save it and resize
+ % using img = imresize(img,[227 227]) and use predict = classify(newnet,img) and the value of predict determines the output
+ % can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is.
  [predict,scores] = classify(newnet,Test);
   
   
