@@ -8,31 +8,12 @@ numofs01 = 1000;
 numofs02 = 990;
 numofs03 = 980;
 ds1 = imageDatastore('...\s01\img*.jpg');
-for i = 1:numofs01
-    i1 = readimage(ds1,i);
-    [img,face] = cropface(i1);
-    if face==1
-        imwrite(img,[ '...\croppedfaces\s01\img',int2str(i), '.jpg']);
-    end
-end
 ds2 = imageDatastore('...\s02\img*.jpg');
-for i = 1:numofs02
-    i1 = readimage(ds2,i);
-    [img,face] = cropface(i1);
-    if face==1
-        imwrite(img,[ '...\croppedfaces\s02\img',int2str(i), '.jpg']);
-    end
-end
 ds3 = imageDatastore('...\s03\img*.jpg');
-for i = 1:numofs03
-    i1 = readimage(ds3,i);
-    [img,face] = cropface(i1);
-    if face==1
-        imwrite(img,[ '...\croppedfaces\s03\img',int2str(i), '.jpg']);
-    end
-end
+cropandsave(ds1,'s01',numofs01);
+cropandsave(ds2,'s02',numofs02);
+cropandsave(ds3,'s03',numofs03);
  im = imageDatastore('croppedfaces','IncludeSubfolders',true,'LabelSource','foldernames');
- names = im.Labels;
  % Resize the images to the input size of the net
  im.ReadFcn = @(loc)imresize(imread(loc),[227,227]);
  [Train ,Test] = splitEachLabel(im,0.8,'randomized');
@@ -51,6 +32,11 @@ end
  % using img = imresize(img,[227 227]) and use predict = classify(newnet,img) and the value of predict determines the output
  % can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is.
  [predict,scores] = classify(newnet,Test);
+ names = Test.Labels;
+ pred = (predict==Test);
+ s = size(pred);
+ acc = sum(pred)/s(1);
+ fprintf('The accuracy of the test set is %f \n',acc);
   
   
   
