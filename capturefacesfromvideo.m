@@ -89,6 +89,7 @@ while runLoop && frameCount < 1000
             % Reset the points.
             oldPoints = visiblePoints;
             setPoints(pointTracker, oldPoints);
+            i = i+1;
         end
 
     end
@@ -98,7 +99,6 @@ while runLoop && frameCount < 1000
 
     % Check whether the video player window has been closed.
     runLoop = isOpen(videoPlayer);
-    i = i+1;
 end
 
 % Clean up.
