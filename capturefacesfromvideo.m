@@ -4,7 +4,7 @@ faceDetector = vision.CascadeObjectDetector('FrontalFaceCART','MinSize',[150,150
 % change str to s01,s02,s03,.... for saving  upto how many subjects you want to save for saving in respective folders for 
 % imwrite in line 89
 
-str = 's01'
+str = 's01';
 
 
 
