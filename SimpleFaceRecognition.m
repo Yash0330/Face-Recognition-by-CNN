@@ -3,16 +3,11 @@ n = 3;
 % looping through all subjects and cropping faces if found
 % extract the subject photo and crop faces and saving it in to respective
 % folders
-% numofs01,numofs02,numofs03,....,etc is the number of the images of subject 1, subject 2, subject 3,...,etc.
-numofs01 = 1000;
-numofs02 = 990;
-numofs03 = 980;
-ds1 = imageDatastore('...\s01\img*.jpg');
-ds2 = imageDatastore('...\s02\img*.jpg');
-ds3 = imageDatastore('...\s03\img*.jpg');
-cropandsave(ds1,'s01',numofs01);
-cropandsave(ds2,'s02',numofs02);
-cropandsave(ds3,'s03',numofs03);
+for i =1:n
+    str = ['s0',int2str(i)];
+    ds1 = imageDatastore(['photos\',str],'IncludeSubfolders',true,'LabelSource','foldernames');
+    cropandsave(ds1,str);
+end
  im = imageDatastore('croppedfaces','IncludeSubfolders',true,'LabelSource','foldernames');
  % Resize the images to the input size of the net
  im.ReadFcn = @(loc)imresize(imread(loc),[227,227]);
@@ -37,9 +32,3 @@ cropandsave(ds3,'s03',numofs03);
  s = size(pred);
  acc = sum(pred)/s(1);
  fprintf('The accuracy of the test set is %f \n',acc);
-  
-  
-  
-  
-  
-  
