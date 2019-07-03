@@ -1,6 +1,13 @@
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('FrontalFaceCART','MinSize',[150,150]);
 
+% change str to s01,s02,s03,.... for saving  upto how many subjects you want to save for saving in respective folders for 
+% imwrite in line 89
+
+str = 's01'
+
+
+
 % Create the point tracker object.
 pointTracker = vision.PointTracker('MaxBidirectionalError', 2);
 
@@ -79,7 +86,7 @@ while runLoop && frameCount < 1000
             % Convert the box corners into the [x1 y1 x2 y2 x3 y3 x4 y4]
             % format required by insertShape.
             bboxPolygon = reshape(bboxPoints', 1, []);
-            imwrite(videoFrame,[ '...\SimpleFaceRecognition\s01\',int2str(i), '.jpg']);
+            imwrite(videoFrame,[ 'photos\',str,'\',int2str(i), '.jpg']);
             % Display a bounding box around the face being tracked.
             videoFrame = insertShape(videoFrame, 'Polygon', bboxPolygon, 'LineWidth', 3);
 
