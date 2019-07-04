@@ -32,3 +32,10 @@ end
  s = size(pred);
  acc = sum(pred)/s(1);
  fprintf('The accuracy of the test set is %f \n',acc);
+% Test a new Image
+% use code below with giving path to your new image
+% img = imread('...\img.jpg');
+% img = imresize(img,[227 227]);
+% predict = classify(newnet,img)
+% and the value of predict determines the output	 
+% can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is
