@@ -6,8 +6,6 @@ faceDetector = vision.CascadeObjectDetector('FrontalFaceCART','MinSize',[150,150
 
 str = 's01';
 
-
-
 % Create the point tracker object.
 pointTracker = vision.PointTracker('MaxBidirectionalError', 2);
 
@@ -25,6 +23,7 @@ numPts = 0;
 frameCount = 0;
 i=1;
 
+% Here the loop runs for 1000 times you can change the threshold based on the number of training data you need
 while runLoop && frameCount < 1000
 
     % Get the next frame.
