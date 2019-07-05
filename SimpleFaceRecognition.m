@@ -1,5 +1,7 @@
 % n is the number of subjects
 n = 3;
+% You can press pause button manually on tranining plot once accuracy reaches upto desired level
+
 % looping through all subjects and cropping faces if found
 % extract the subject photo and crop faces and saving it in to respective
 % folders
@@ -23,9 +25,6 @@ end
  learning_rate = 0.0001;
  opts = trainingOptions("sgdm","InitialLearnRate",learning_rate,'Plots','training-progress');
  [newnet,info] = trainNetwork(Train, ly, opts);
- % To test a new image first save it and cropface using cropface.m([img,face] = cropface(img); and if it returned 1 for face then save it and resize
- % using img = imresize(img,[227 227]) and use predict = classify(newnet,img) and the value of predict determines the output
- % can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is.
  [predict,scores] = classify(newnet,Test);
  names = Test.Labels;
  pred = (predict==Test);
@@ -35,7 +34,11 @@ end
 % Test a new Image
 % use code below with giving path to your new image
 % img = imread('...\img.jpg');
-% img = imresize(img,[227 227]);
-% predict = classify(newnet,img)
-% and the value of predict determines the output	 
-% can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is
+% [img,face] = cropface(img);
+% face value is 1 when it detects face in image or 0
+% if face == 1
+%   img = imresize(img,[227 227]);
+%   predict = classify(newnet,img)
+% end
+%  and the value of predict determines the output	 
+%  can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is
