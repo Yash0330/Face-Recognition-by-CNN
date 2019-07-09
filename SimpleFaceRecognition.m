@@ -27,7 +27,7 @@ end
  [newnet,info] = trainNetwork(Train, ly, opts);
  [predict,scores] = classify(newnet,Test);
  names = Test.Labels;
- pred = (predict==Test);
+ pred = (predict==names);
  s = size(pred);
  acc = sum(pred)/s(1);
  fprintf('The accuracy of the test set is %f \n',acc);
