@@ -1,6 +1,9 @@
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('FrontalFaceCART','MinSize',[150,150]);
 
+% Here the loop runs for 300 times you can change the threshold (n) based on the number of training data you need
+n = 300;
+
 % change str to s01,s02,s03,.... for saving  upto how many subjects you want to save for saving in respective folders for 
 % imwrite in line 88
 
@@ -23,8 +26,7 @@ numPts = 0;
 frameCount = 0;
 i=1;
 
-% Here the loop runs for 1000 times you can change the threshold based on the number of training data you need
-while runLoop && frameCount < 1000
+while runLoop && frameCount < n
 
     % Get the next frame.
     videoFrame = snapshot(cam);
