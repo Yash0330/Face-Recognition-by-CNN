@@ -1,0 +1,56 @@
+Step 1:
+    If you want any help please contact me on yashwanthmanjunat@gmail.com.
+    In this code I have used 3 subjects you can use how many subjects you want
+    But remember to add folders s04,s05, etc (or delete)based on number of subjects in photos folder
+    and in cropped faces folder add empty folders named s04,s05, etc based on number of subjectsx
+    First run capturefacesfromvideo.m to get training data. 
+    If you have training data paste the images of subject 1 in photos\s01 and subject 2 in photos\s02
+    and so on and please skip to Step 2.
+    I have set to run loop for 300 times which means we get around 300 images for 1 subject
+    You can change this threshold it is mentioned in code change it according to how much training
+    data you need.
+    And in capturefacesfromvideo.m change the string str = 's01' to str = 's02','s03', etc for each 
+    subject and run it to get training  data for all subjects this will automatically store the data for a 
+    subject in photos\s01 folder for str='s01' and so on for all subject you just need to change the str
+    (which is mentioned in the code).
+
+Step 2:
+    Now in SimpleFaceRecognition.m change the value of n which is number of subjects or
+    number of persons.
+    and run it. It will automatically crop faces in data which is in photos folder for each subject 
+    and if faces are detected it stores cropped faces in croppedfaces\s01 for subject 1 and so on.
+    and it will resize the image for input size of Neural Network.
+    and it will train the neural network I have set learning rate as 0.0001 you can change this if you
+    want and it will start to train and it will show the process of training.
+    you can see the training process and can manually stop it if the accuracy reaches you desired
+    level (press pause button at top right corner besides number of iterations of dialog box to stop it).
+    and it will show the accuracy of test data.
+Step 3:
+   Now let's test a new image (It is also mentioned in the code)
+   use code below with giving path to your new image
+   face value is 1 when it detects face in image or 0
+   here I have done it for 3 subjects you can change this based on number of subjects.
+(
+	nameofs01 = 'name of subject 1';
+	nameofs02 = 'name of subject 2';
+	nameofs03 = 'name of subject 3';
+	img = imread('...\img.jpg');
+	[img,face] = cropface(img);
+	if face == 1
+    		img = imresize(img,[227 227]);
+    		predict = classify(newnet,img);
+ 	end
+	if predict=='s01'
+    		fprintf('The face detected is %s',nameofs01);
+	elseif  predict=='s02'
+   		fprintf('The face detected is %s',nameofs02);
+	elseif  predict=='s03'
+   		fprintf('The face detected is %s',nameofs03);
+	end
+)
+can use [predict,score] = classify(newnet,img) and fprintf('The face detected is %s with accuracy %f ',nameofs01,scores(str2num(predict(3))));
+here score says the percentage that how confidence it is. 
+    
+    
+     
+   
