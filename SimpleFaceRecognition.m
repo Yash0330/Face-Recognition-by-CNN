@@ -1,6 +1,6 @@
 % n is the number of subjects
 n = 3;
-% You can press pause button manually on tranining plot once accuracy reaches upto desired level
+% You can press stop button manually on tranining plot(on top right corner besides number of iterations) once accuracy reaches upto desired level
 
 % looping through all subjects and cropping faces if found
 % extract the subject photo and crop faces and saving it in to respective
