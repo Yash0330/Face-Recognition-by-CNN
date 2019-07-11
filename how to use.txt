@@ -20,10 +20,10 @@ Step 2:
     and run it. It will automatically crop faces in data which is in photos folder for each subject 
     and if faces are detected it stores cropped faces in croppedfaces\s01 for subject 1 and so on.
     and it will resize the image for input size of Neural Network.
-    and it will train the neural network I have set learning rate as 0.0001 you can change this if you
+    and it will train the neural network I have set learning rate as 0.00001 you can change this if you
     want and it will start to train and it will show the process of training.
     you can see the training process and can manually stop it if the accuracy reaches you desired
-    level (press pause button at top right corner besides number of iterations of dialog box to stop it).
+    level (press stop button at top right corner besides number of iterations of dialog box to stop it).
     and it will show the accuracy of test data.
 Step 3:
    Now let's test a new image (It is also mentioned in the code)
