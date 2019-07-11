@@ -40,5 +40,14 @@ end
 %   img = imresize(img,[227 227]);
 %   predict = classify(newnet,img)
 % end
-%  and the value of predict determines the output	 
+% nameofs01 = 'name of subject 1';
+% nameofs02 = 'name of subject 2';
+% nameofs03 = 'name of subject 3';
+% if predict=='s01'
+%   fprintf('The face detected is %s',nameofs01);
+% elseif  predict=='s02'
+%   fprintf('The face detected is %s',nameofs02);
+% elseif  predict=='s03'
+%   fprintf('The face detected is %s',nameofs03);
+% end	 
 %  can use [predict,score] = classify(newnet,img) here score says the percentage that how confidence it is
