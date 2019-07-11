@@ -1,2 +1,2 @@
 Here is given my training progress plot as you can see by training the powerful neural network alexnet
-I have got above 99 % training accuracy and above 98 % test set accuracy at the end of 66 iterations which took only ten minutes.However yours can differ based on Training data.
+I have got above 99 % training accuracy at the end of 60 iterations which took only five minutes and above 99 % test set accuracy.However yours can differ based on Training data.
