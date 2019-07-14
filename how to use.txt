@@ -1,7 +1,7 @@
 Step 1:
     In this code I have used 3 subjects you can use how many subjects you want
     But remember to add folders s04,s05, etc (or delete)based on number of subjects in photos folder
-    and in cropped faces folder add empty folders named s04,s05, etc based on number of subjectsx
+    and in cropped faces folder add empty folders named s04,s05, etc based on number of subjects
     First run capturefacesfromvideo.m to get training data. 
     If you have training data paste the images of subject 1 in photos\s01 and subject 2 in photos\s02
     and so on and please skip to Step 2.
