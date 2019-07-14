@@ -51,14 +51,14 @@ Step 3:
     		img = imresize(img,[227 227]);
     		predict = classify(newnet,img);
 	else
-		fprintf('No face detected');
+		fprintf('No face detected \n');
  	end
 	if predict=='s01'
-    		fprintf('The face detected is %s',nameofs01);
+    		fprintf('The face detected is %s \n',nameofs01);
 	elseif  predict=='s02'
-   		fprintf('The face detected is %s',nameofs02);
+   		fprintf('The face detected is %s \n',nameofs02);
 	elseif  predict=='s03'
-   		fprintf('The face detected is %s',nameofs03);
+   		fprintf('The face detected is %s \n',nameofs03);
 	end
 )
 
