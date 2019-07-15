@@ -65,6 +65,8 @@ Step 3:
 can use [predict,score] = classify(newnet,img) and fprintf('The face detected is %s with accuracy %f ',nameofs01,scores(str2num(predict(3))));
 here score says the percentage that how confidence it is. 
     
+For more info:
+https://www.youtube.com/watch?v=sfxvn2hnc3g
 
 If you want any help please contact me on yashwanthmanjunat@gmail.com.
      
