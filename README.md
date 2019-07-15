@@ -4,3 +4,6 @@ Using capturefacesfromvideo.m to get training data from video and saving images 
 And using cropface.m to crop faces from images from training data.
 And training Convolutional Neural Network alexnet by modifying output layesrs by number of subjects and using rmsprop optimizer.
 Using trained newnet for face recognition.
+
+For more info:
+https://www.youtube.com/watch?v=sfxvn2hnc3g
