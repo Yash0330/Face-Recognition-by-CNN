@@ -6,6 +6,4 @@ And training Convolutional Neural Network alexnet by modifying output layesrs by
 Using trained newnet for face recognition.
 
 
-[![View Face-Recognition-by-CNN on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://in.mathworks.com/matlabcentral/fileexchange/72005-face-recognition-by-cnn)
-
 
